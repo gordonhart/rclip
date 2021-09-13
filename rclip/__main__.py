@@ -147,9 +147,10 @@ class RClip:
 
 def main():
   arg_parser = utils.init_arg_parser()
+  arg_parser.add_argument("--searchdir", required=True, help="Directory to search")
   args = arg_parser.parse_args()
 
-  current_directory = os.getcwd()
+  current_directory = args.searchdir.strip("/")
 
   model_instance = model.Model()
   datadir = utils.get_app_datadir()
