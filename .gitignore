@@ -142,3 +142,8 @@ appimage-builder-cache
 *.AppImage
 *.AppImage.zsync
 requirements.txt
+
+# vim swapfiles
+*.swp
+*.swo
+*.swn
