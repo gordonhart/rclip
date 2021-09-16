@@ -147,3 +147,6 @@ requirements.txt
 *.swp
 *.swo
 *.swn
+
+# IDE cruft
+.idea/

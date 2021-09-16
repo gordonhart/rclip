@@ -1,1 +1,1 @@
-NAME = 'rclip'
+NAME = "rclip"

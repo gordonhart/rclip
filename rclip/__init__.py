@@ -1,8 +1,9 @@
+import rclip.config
 import rclip.db
 import rclip.model
 import rclip.utils
-import rclip.config
+from rclip.rclip import RClip
 
 __all__ = [
-    "db", "model", "utils", "config",
+    "db", "model", "utils", "config", "RClip",
 ]
