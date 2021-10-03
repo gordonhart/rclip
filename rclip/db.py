@@ -88,7 +88,10 @@ class DB:
     def get_image(self, **kwargs: Any) -> Optional[Image]:
         query = " AND ".join(f"{key}=:{key}" for key in kwargs)
         cur = self._con.execute(f"SELECT * FROM images WHERE {query} LIMIT 1", kwargs)
-        return Image(**cur.fetchone())
+        try:
+            return Image(**cur.fetchone())
+        except TypeError:
+            return None
 
     def get_image_vectors_by_dir_path(self, path: str) -> sqlite3.Cursor:
         return self._con.execute(

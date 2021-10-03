@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 
 from rclip import db
 from rclip import model
@@ -8,10 +9,9 @@ from rclip import utils
 
 def main() -> int:
     arg_parser = utils.init_arg_parser()
-    arg_parser.add_argument("--searchdir", required=True, help="Directory to search")
     args = arg_parser.parse_args()
 
-    current_directory = args.searchdir.strip("/")
+    current_directory = str(Path(args.search_dir))
 
     model_instance = model.Model()
     datadir = utils.get_app_datadir()
